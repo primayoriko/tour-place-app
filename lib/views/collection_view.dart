@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tour_place_app/views/details_view.dart';
 import 'package:tour_place_app/models/place.dart';
+import 'package:tour_place_app/constants.dart';
 
 class CollectionView extends StatelessWidget {
   @override
@@ -20,8 +21,7 @@ class CollectionView extends StatelessWidget {
             //   settings: RouteSettings(name: 'collection_view')));
             // },
             onPressed: () {
-              // Navigate to the second screen using a named route.
-              Navigator.pushNamed(context, '/details');
+              Navigator.pushNamed(context, DetailsViewRoute, arguments: place);
             },
             child: Card(
               child: Row(
