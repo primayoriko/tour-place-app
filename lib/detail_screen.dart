@@ -47,7 +47,11 @@ class DetailScreen extends StatelessWidget {
                       IconButton(
                           icon: Icon(Icons.arrow_back),
                           onPressed: () {
-                            Navigator.pop(context);
+                            Navigator.of(context).popUntil((route){
+                              // return route.isFirst;
+                              return route.settings.name == "list_screen";
+                            });
+                            // Navigator.pop(context);
                           }),
                       FavouriteButton()
                     ],

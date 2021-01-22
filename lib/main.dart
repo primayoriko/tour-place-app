@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:basic_flutter_app/menu_screen.dart';
 import 'package:basic_flutter_app/detail_screen.dart';
-import 'package:basic_flutter_app/main_screen.dart';
+import 'package:basic_flutter_app/list_screen.dart';
 
 void main() => (runApp(MyApp()));
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       // ),
       theme: ThemeData.dark(),
       // home: DetailScreen(),
-      home: MainScreen(),
+      home: MenuScreen(),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

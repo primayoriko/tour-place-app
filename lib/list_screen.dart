@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:basic_flutter_app/detail_screen.dart';
 import 'package:basic_flutter_app/models/place.dart';
 
-class MainScreen extends StatelessWidget {
+class ListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,9 +13,10 @@ class MainScreen extends StatelessWidget {
         children: tourismPlaceList.map((place) {
           return FlatButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return DetailScreen(place: place);
-              }));
+              },
+              settings: RouteSettings(name: 'detail_screen')));
             },
             child: Card(
               child: Row(
