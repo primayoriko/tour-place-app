@@ -25,10 +25,10 @@ class _FavouriteButtonState extends State<FavouriteButton> {
   }
 }
 
-class DetailScreen extends StatelessWidget {
+class DetailsView extends StatelessWidget {
   final Place place;
 
-  DetailScreen({@required this.place});
+  DetailsView({@required this.place});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class DetailScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.of(context).popUntil((route){
                               // return route.isFirst;
-                              return route.settings.name == "list_screen";
+                              return route.settings.name == "collection_view";
                             });
                             // Navigator.pop(context);
                           }),

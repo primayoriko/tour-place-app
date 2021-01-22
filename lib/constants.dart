@@ -1,3 +1,3 @@
 const String HomeViewRoute = '/';
-const String ListViewRoute = '/list';
+const String CollectionViewRoute = '/all';
 const String DetailsViewRoute = '/details';

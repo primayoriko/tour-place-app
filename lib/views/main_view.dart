@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tour_place_app/views/list_screen.dart';
+import 'package:tour_place_app/views/collection_view.dart';
 
-class MenuScreen extends StatelessWidget {
+class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,13 +34,13 @@ class MenuScreen extends StatelessWidget {
               splashColor: Colors.blueAccent,
               onPressed: () {
                 // Navigate to the second screen using a named route.
-                Navigator.pushNamed(context, '/list');
+                Navigator.pushNamed(context, '/all');
               },
               // Navigator.of(context).push(MaterialPageRoute(
               //     builder: (context) {
-              //       return ListScreen();
+              //       return CollectionView();
               //     },
-              //     settings: RouteSettings(name: 'main_screen')));
+              //     settings: RouteSettings(name: 'main_view')));
               // },
               child: Text("View Places"),
             ),

@@ -1,4 +1,4 @@
-# tour_place_app
+# Tour Place App
 
 A Tour Place Review App that created with Flutter.
 

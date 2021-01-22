@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tour_place_app/views/detail_screen.dart';
+import 'package:tour_place_app/views/details_view.dart';
 import 'package:tour_place_app/models/place.dart';
 
-class ListScreen extends StatelessWidget {
+class CollectionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Wisata Bandung'),
+        title: Text('Tour Place'),
         backgroundColor: Color.fromRGBO(95, 20, 20, 1),
       ),
       body: ListView(
@@ -15,13 +15,13 @@ class ListScreen extends StatelessWidget {
           return FlatButton(
             // onPressed: () {
             //   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-            //     return DetailScreen(place: place);
+            //     return DetailsView(place: place);
             //   },
-            //   settings: RouteSettings(name: 'list_screen')));
+            //   settings: RouteSettings(name: 'collection_view')));
             // },
             onPressed: () {
               // Navigate to the second screen using a named route.
-              Navigator.pushNamed(context, '/detail');
+              Navigator.pushNamed(context, '/details');
             },
             child: Card(
               child: Row(
