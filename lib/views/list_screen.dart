@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:basic_flutter_app/detail_screen.dart';
+import 'package:basic_flutter_app/views/detail_screen.dart';
 import 'package:basic_flutter_app/models/place.dart';
 
 class ListScreen extends StatelessWidget {
@@ -8,15 +8,20 @@ class ListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Wisata Bandung'),
+        backgroundColor: Color.fromRGBO(95, 20, 20, 1),
       ),
       body: ListView(
         children: tourismPlaceList.map((place) {
           return FlatButton(
+            // onPressed: () {
+            //   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            //     return DetailScreen(place: place);
+            //   },
+            //   settings: RouteSettings(name: 'list_screen')));
+            // },
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return DetailScreen(place: place);
-              },
-              settings: RouteSettings(name: 'detail_screen')));
+              // Navigate to the second screen using a named route.
+              Navigator.pushNamed(context, '/detail');
             },
             child: Card(
               child: Row(

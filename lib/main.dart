@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:basic_flutter_app/menu_screen.dart';
-import 'package:basic_flutter_app/detail_screen.dart';
-import 'package:basic_flutter_app/list_screen.dart';
+import 'package:basic_flutter_app/views/menu_screen.dart';
+import 'package:basic_flutter_app/views/detail_screen.dart';
+import 'package:basic_flutter_app/views/list_screen.dart';
 
 void main() => (runApp(MyApp()));
 
@@ -10,7 +10,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Tour Place App',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => MenuScreen(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/list': (context) => ListScreen(),
+        '/detail': (context) => DetailScreen(place: null),
+      },
       // theme: ThemeData(
       //   // This is the theme of your application.
       //   //

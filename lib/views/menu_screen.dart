@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:basic_flutter_app/list_screen.dart';
+import 'package:basic_flutter_app/views/list_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   @override
@@ -14,14 +14,13 @@ class MenuScreen extends StatelessWidget {
             padding: EdgeInsets.only(left: 40, right: 40, bottom: 35, top: 250),
             child: Center(
                 child: Text(
-                    "Tour App",
-                    style: TextStyle(
-                      fontFamily: 'Oswald',
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                    ),
-                )
-            ),
+              "Tour Place App",
+              style: TextStyle(
+                fontFamily: 'Oswald',
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+              ),
+            )),
             decoration: BoxDecoration(color: Color.fromRGBO(95, 20, 20, 1)),
           ),
           Container(
@@ -34,12 +33,15 @@ class MenuScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 23, horizontal: 60),
               splashColor: Colors.blueAccent,
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) {
-                      return ListScreen();
-                    },
-                    settings: RouteSettings(name: 'main_screen')));
+                // Navigate to the second screen using a named route.
+                Navigator.pushNamed(context, '/list');
               },
+              // Navigator.of(context).push(MaterialPageRoute(
+              //     builder: (context) {
+              //       return ListScreen();
+              //     },
+              //     settings: RouteSettings(name: 'main_screen')));
+              // },
               child: Text("View Places"),
             ),
           ),
