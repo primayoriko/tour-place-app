@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:basic_flutter_app/views/list_screen.dart';
-import 'package:basic_flutter_app/views/unknown_view.dart';
-import 'package:basic_flutter_app/constants.dart';
+import 'package:tour_place_app/views/list_screen.dart';
+import 'package:tour_place_app/views/list_screen.dart';
+import 'package:tour_place_app/views/list_screen.dart';
+import 'package:tour_place_app/views/unknown_view.dart';
+import 'package:tour_place_app/constants.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {

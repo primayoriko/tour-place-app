@@ -1,4 +1,4 @@
-package com.example.basic_flutter_app
+package my.primayoriko.tour_place_app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:basic_flutter_app/views/menu_screen.dart';
-import 'package:basic_flutter_app/views/detail_screen.dart';
-import 'package:basic_flutter_app/views/list_screen.dart';
+import 'package:tour_place_app/views/menu_screen.dart';
+import 'package:tour_place_app/views/detail_screen.dart';
+import 'package:tour_place_app/views/list_screen.dart';
 
 void main() => (runApp(MyApp()));
 

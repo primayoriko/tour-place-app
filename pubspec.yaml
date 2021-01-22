@@ -1,5 +1,5 @@
-name: basic_flutter_app
-description: A new Flutter application.
+name: tour_place_app
+description: A Tour Place Review App that created with Flutter.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -51,19 +51,19 @@ flutter:
     - family: Nexa
       fonts:
         - asset: assets/fonts/nexa/Nexa-Bold.otf
-#    - family: Schyler
-#      fonts:
-#        - asset: fonts/Schyler-Regular.ttf
-#        - asset: fonts/Schyler-Italic.ttf
-#          style: italic
-#    - family: Trajan Pro
-#      fonts:
-#        - asset: fonts/TrajanPro.ttf
-#        - asset: fonts/TrajanPro_Bold.ttf
-#          weight: 700
-#     - family: Oswald
-#       fonts:
-#         - asset: fonts/Oswald/Oswald-Regular.ttf
+  #    - family: Schyler
+  #      fonts:
+  #        - asset: fonts/Schyler-Regular.ttf
+  #        - asset: fonts/Schyler-Italic.ttf
+  #          style: italic
+  #    - family: Trajan Pro
+  #      fonts:
+  #        - asset: fonts/TrajanPro.ttf
+  #        - asset: fonts/TrajanPro_Bold.ttf
+  #          weight: 700
+  #     - family: Oswald
+  #       fonts:
+  #         - asset: fonts/Oswald/Oswald-Regular.ttf
 
 
   # To add assets to your application, add an assets section, like this:

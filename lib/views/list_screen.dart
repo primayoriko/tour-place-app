@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:basic_flutter_app/views/detail_screen.dart';
-import 'package:basic_flutter_app/models/place.dart';
+import 'package:tour_place_app/views/detail_screen.dart';
+import 'package:tour_place_app/models/place.dart';
 
 class ListScreen extends StatelessWidget {
   @override

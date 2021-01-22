@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:basic_flutter_app/views/list_screen.dart';
+import 'package:tour_place_app/views/list_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   @override

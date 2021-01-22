@@ -1,6 +1,6 @@
-# basic_flutter_app
+# tour_place_app
 
-A new Flutter application.
+A Tour Place Review App that created with Flutter.
 
 ## Getting Started
 
