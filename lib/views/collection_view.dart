@@ -8,8 +8,17 @@ class CollectionView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tour Place'),
         backgroundColor: Color.fromRGBO(95, 20, 20, 1),
+        title: Text('Tour Place'),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: (){
+              // showSearch(context: , delegate: );
+            },
+          )
+        ],
       ),
       body: ListView(
         children: tourismPlaceList.map((place) {
