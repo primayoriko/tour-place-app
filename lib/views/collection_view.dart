@@ -21,7 +21,13 @@ class CollectionView extends StatelessWidget {
             //   settings: RouteSettings(name: 'collection_view')));
             // },
             onPressed: () {
-              Navigator.pushNamed(context, DetailsViewRoute, arguments: place);
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  settings: RouteSettings(name: DetailsViewRoute),
+                  builder: (context) => DetailsView(place: place),
+                ),
+              );
+              // Navigator.of(context).pushNamed(DetailsViewRoute, arguments: place);
             },
             child: Card(
               child: Row(

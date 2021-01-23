@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tour_place_app/models/place.dart';
 import 'package:tour_place_app/constants.dart';
+import 'package:logging/logging.dart';
 
 class FavouriteButton extends StatefulWidget {
   @override
@@ -28,6 +29,7 @@ class _FavouriteButtonState extends State<FavouriteButton> {
 
 class DetailsView extends StatelessWidget {
   final Place place;
+  // final _logger = Logger('logger');
 
   DetailsView({@required this.place});
 
@@ -48,12 +50,9 @@ class DetailsView extends StatelessWidget {
                       IconButton(
                           icon: Icon(Icons.arrow_back),
                           onPressed: () {
-                            Navigator.pop(context);
-                            // Navigator.pushNamed(context, '/details');
-                            // Navigator.of(context).popUntil((route){
-                            //   // return route.isFirst;
-                            //   return route.settings.name == "collection_view";
-                            // });
+                            // Navigator.of(context).popUntil(ModalRoute.withName(HomeViewRoute));
+                            Navigator.of(context).popUntil(ModalRoute.withName(CollectionViewRoute));
+                            // Navigator.pop(context);
                             // Navigator.pop(context);
                           }),
                       FavouriteButton()
