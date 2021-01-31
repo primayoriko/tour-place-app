@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tour_place_app/models/place.dart';
+import 'package:tour_place_app/components/search.dart';
 import 'package:tour_place_app/constants.dart';
 import 'package:logging/logging.dart';
 

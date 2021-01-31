@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tour_place_app/components/search.dart';
 import 'package:tour_place_app/views/details_view.dart';
 import 'package:tour_place_app/models/place.dart';
 import 'package:tour_place_app/constants.dart';
@@ -22,7 +23,7 @@ class _CollectionViewState extends State<CollectionView> {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: (){
-              // showSearch(context: , delegate: );
+              showSearch(context: context, delegate: Search(widget.placeList));
             },
           )
         ],
