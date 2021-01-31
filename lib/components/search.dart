@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:tour_place_app/models/place.dart';
+import 'package:tour_place_app/views/details_view.dart';
+import 'package:tour_place_app/constants.dart';
 
 class Search extends SearchDelegate<Place> {
   final List<Place> placeList;
@@ -36,8 +38,58 @@ class Search extends SearchDelegate<Place> {
   @override
   Widget buildResults(BuildContext context) {
     return Container(
-      child: Center(
-        child: Text(selectedResult),
+      child: ListView(
+        children:
+            placeList.where((place) => place.name.contains(query)).map((place) {
+          return FlatButton(
+            // onPressed: () {
+            //   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            //     return DetailsView(place: place);
+            //   },
+            //   settings: RouteSettings(name: 'collection_view')));
+            // },
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  settings: RouteSettings(name: DetailsViewRoute),
+                  builder: (context) => DetailsView(place: place),
+                ),
+              );
+              // Navigator.of(context).pushNamed(DetailsViewRoute, arguments: place);
+            },
+            child: Card(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Expanded(
+                    flex: 1,
+                    child: Image.asset(place.imageAsset),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Text(
+                            place.name,
+                            style: TextStyle(fontSize: 16.0),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(place.location),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        }).toList(),
       ),
     );
   }
