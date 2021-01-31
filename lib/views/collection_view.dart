@@ -3,7 +3,14 @@ import 'package:tour_place_app/views/details_view.dart';
 import 'package:tour_place_app/models/place.dart';
 import 'package:tour_place_app/constants.dart';
 
-class CollectionView extends StatelessWidget {
+class CollectionView extends StatefulWidget {
+  final List<Place> placeList = tourismPlaceList;
+
+  @override
+  _CollectionViewState createState() => _CollectionViewState();
+}
+
+class _CollectionViewState extends State<CollectionView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +28,7 @@ class CollectionView extends StatelessWidget {
         ],
       ),
       body: ListView(
-        children: tourismPlaceList.map((place) {
+        children: widget.placeList.map((place) {
           return FlatButton(
             // onPressed: () {
             //   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
@@ -76,6 +83,7 @@ class CollectionView extends StatelessWidget {
   }
 }
 
+
 var tourismPlaceList = [
   Place(
     name: 'Farm House Lembang',
@@ -93,8 +101,8 @@ var tourismPlaceList = [
     ],
   ),
   Place(
-    name: 'Farm House Lembang',
-    location: 'Lembang',
+    name: 'Monumen Nasional',
+    location: 'Jakarta',
     description:
         'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
     openDays: 'Open Everyday',
@@ -108,8 +116,8 @@ var tourismPlaceList = [
     ],
   ),
   Place(
-    name: 'Farm House Lembang',
-    location: 'Lembang',
+    name: 'Curug Cikaso',
+    location: 'Sukabumi',
     description:
         'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
     openDays: 'Open Everyday',
@@ -123,8 +131,8 @@ var tourismPlaceList = [
     ],
   ),
   Place(
-    name: 'Farm House Lembang',
-    location: 'Lembang',
+    name: 'Museum Geologi',
+    location: 'Bandung',
     description:
         'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
     openDays: 'Open Everyday',

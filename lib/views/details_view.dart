@@ -61,12 +61,21 @@ class DetailsView extends StatelessWidget {
                 ]),
                 Container(
                   child: Text(
-                    'Farm Houses',
+                    this.place.name,
                     textAlign: TextAlign.center,
                     // textAlign: TextAlignVertical.center,
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   margin: EdgeInsets.only(top: 20),
+                ),
+                Container(
+                  child: Text(
+                    "~ at " + this.place.location + " ~",
+                    textAlign: TextAlign.center,
+                    // textAlign: TextAlignVertical.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+                  ),
+                  margin: EdgeInsets.symmetric(vertical: 8),
                 ),
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 16),
@@ -77,21 +86,21 @@ class DetailsView extends StatelessWidget {
                         children: <Widget>[
                           Icon(Icons.calendar_today),
                           SizedBox(height: 8),
-                          Text('Open Weekend')
+                          Text(this.place.openDays)
                         ],
                       ),
                       Column(
                         children: <Widget>[
                           Icon(Icons.access_time),
                           SizedBox(height: 8),
-                          Text('Open Weekend')
+                          Text(this.place.openTime)
                         ],
                       ),
                       Column(
                         children: <Widget>[
                           Icon(Icons.monetization_on),
                           SizedBox(height: 8),
-                          Text('Open Weekend')
+                          Text(this.place.ticketPrice)
                         ],
                       ),
                     ],
@@ -100,7 +109,7 @@ class DetailsView extends StatelessWidget {
                 Container(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                        'lorem ipsum sir dolor amet.. ... .... ...asdsa ..sad sad.. .asds ad.s',
+                        this.place.description,
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 15))),
                 Container(
