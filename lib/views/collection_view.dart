@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:tour_place_app/components/search.dart';
+import 'package:tour_place_app/components/favourite_button.dart';
+
 import 'package:tour_place_app/views/details_view.dart';
 import 'package:tour_place_app/models/place.dart';
 import 'package:tour_place_app/constants.dart';
@@ -9,10 +12,14 @@ class CollectionView extends StatefulWidget {
   final List<Place> placeList = tourismPlaceList;
 
   @override
-  _CollectionViewState createState() => _CollectionViewState();
+  _CollectionViewState createState() => _CollectionViewState(placeList);
 }
 
 class _CollectionViewState extends State<CollectionView> {
+  List<Place> placeList;
+
+  _CollectionViewState(this.placeList);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +31,7 @@ class _CollectionViewState extends State<CollectionView> {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: (){
-              showSearch(context: context, delegate: Search(widget.placeList));
+              showSearch(context: context, delegate: Search(placeList));
             },
           )
         ],
@@ -42,18 +49,12 @@ class _CollectionViewState extends State<CollectionView> {
         ),
       ),
       body: ListView(
-        children: widget.placeList.map((place) {
+        children: placeList.map((place) {
           return FlatButton(
-            // onPressed: () {
-            //   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-            //     return DetailsView(place: place);
-            //   },
-            //   settings: RouteSettings(name: 'collection_view')));
-            // },
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  settings: RouteSettings(name: DetailsViewRoute),
+                  settings: RouteSettings(name: DetailsViewRoute, arguments: Map()),
                   builder: (context) => DetailsView(place: place),
                 ),
               );
@@ -65,19 +66,29 @@ class _CollectionViewState extends State<CollectionView> {
                 children: <Widget>[
                   Expanded(
                     flex: 1,
-                    child: Image.asset(place.imageAsset),
+                    child: Center(
+                      child: Image.asset(place.imageAsset)
+                    )
                   ),
                   Expanded(
                     flex: 2,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.only(bottom: 13, left: 12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          Text(
-                            place.name,
-                            style: TextStyle(fontSize: 16.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Container(
+                                child: Text(
+                                  place.name,
+                                  style: TextStyle(fontSize: 16.0),
+                                )
+                              ),
+                              FavouriteButton(place.isFavourite)
+                            ],
                           ),
                           SizedBox(
                             height: 10,

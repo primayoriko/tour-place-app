@@ -38,7 +38,7 @@ class HomeView extends StatelessWidget {
                 // Navigator.pushNamed(context, CollectionViewRoute);
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    settings: RouteSettings(name: CollectionViewRoute),
+                    settings: RouteSettings(name: CollectionViewRoute, arguments: Map()),
                     builder: (context) => CollectionView(),
                   ),
                 );

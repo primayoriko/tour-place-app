@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:tour_place_app/models/place.dart';
-import 'package:tour_place_app/components/search.dart';
 import 'package:tour_place_app/components/favourite_button.dart';
 import 'package:tour_place_app/constants.dart';
 import 'package:logging/logging.dart';
-
 
 class DetailsView extends StatelessWidget {
   final Place place;
@@ -31,9 +29,17 @@ class DetailsView extends StatelessWidget {
                       IconButton(
                           icon: Icon(Icons.arrow_back),
                           onPressed: () {
-                            // Navigator.of(context).popUntil(ModalRoute.withName(HomeViewRoute));
-                            Navigator.of(context).popUntil(ModalRoute.withName(CollectionViewRoute));
-                            // Navigator.pop(context);
+                            // Navigator.of(context).popUntil(ModalRoute.withName(CollectionViewRoute));
+                            // Navigator.pop(context, place);
+                            Navigator.of(context).popUntil((route) {
+                              print(route.settings.name);
+                              if (route.settings.name == CollectionViewRoute) {
+                                (route.settings.arguments as Map)['place'] = place;
+                                // print(((route.settings.arguments as Map)['place'] as Place).name);
+                                return true;
+                              }
+                              return false;
+                            });
                           }),
                       FavouriteButton(place.isFavourite)
                     ],
