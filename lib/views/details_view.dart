@@ -64,7 +64,12 @@ class DetailsView extends StatelessWidget {
                 //   child:
                 // ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 16),
+                  margin: EdgeInsets.only(bottom: 8),
+                  padding: EdgeInsets.symmetric(vertical: 13),
+                  decoration: BoxDecoration(
+                    // border: Border.symmetric(horizontal: BorderSide(width: 4, color: Color.fromRGBO(140, 50, 50, 0.5))),
+                    color: Color.fromRGBO(140, 45, 45, 0.8),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -138,7 +143,15 @@ class DetailsView extends StatelessWidget {
                     )
                 ),
                 Container(
+                  child: Text(
+                    "Images",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Container(
                   height: 150,
+                  margin: EdgeInsets.symmetric(vertical: 15),
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
@@ -158,6 +171,18 @@ class DetailsView extends StatelessWidget {
                             'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
                       ),
                     ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    // border: Border.symmetric(horizontal: BorderSide(width: 4, color: Color.fromRGBO(140, 50, 50, 0.5))),
+                    color: Color.fromRGBO(95, 30, 30, 1),
+                  ),
+                  child: Text(
+                    "Copyright @MyTrip.co ~2021~",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
                   ),
                 ),
             ],
