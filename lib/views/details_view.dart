@@ -29,10 +29,10 @@ class DetailsView extends StatelessWidget {
                       IconButton(
                           icon: Icon(Icons.arrow_back),
                           onPressed: () {
-                            // Navigator.of(context).popUntil(ModalRoute.withName(CollectionViewRoute));
                             // Navigator.pop(context, place);
+                            // Navigator.of(context).popUntil(ModalRoute.withName(CollectionViewRoute));
                             Navigator.of(context).popUntil((route) {
-                              print(route.settings.name);
+                              // print(route.settings.name);
                               if (route.settings.name == CollectionViewRoute) {
                                 (route.settings.arguments as Map)['place'] = place;
                                 // print(((route.settings.arguments as Map)['place'] as Place).name);
@@ -128,7 +128,7 @@ class DetailsView extends StatelessWidget {
                             color: Colors.amber,
                           ),
                           onRatingUpdate: (rating) {
-                            print(rating);
+                            place.rating = rating;
                           },
                         ),
                       ],

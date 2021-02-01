@@ -49,15 +49,27 @@ class _CollectionViewState extends State<CollectionView> {
         ),
       ),
       body: ListView(
-        children: placeList.map((place) {
+        children: placeList.asMap().entries.map((entry) {
+          var idx = entry.key;
+          var place = entry.value;
+
           return FlatButton(
-            onPressed: () {
-              Navigator.of(context).push(
+            onPressed: () async {
+              final newPlace = await Navigator.push(
+                context,
                 MaterialPageRoute(
                   settings: RouteSettings(name: DetailsViewRoute, arguments: Map()),
                   builder: (context) => DetailsView(place: place),
                 ),
-              );
+              ).then((_) {
+                  final arguments = ModalRoute.of(context).settings.arguments as Map;
+                  final newPlace = arguments['place'];
+                  return newPlace;
+                });
+
+              setState(() {
+                placeList.replaceRange(idx, idx + 1, [newPlace]);
+              });
               // Navigator.of(context).pushNamed(DetailsViewRoute, arguments: place);
             },
             child: Card(
