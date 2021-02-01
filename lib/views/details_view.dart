@@ -1,32 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tour_place_app/models/place.dart';
 import 'package:tour_place_app/components/search.dart';
+import 'package:tour_place_app/components/favourite_button.dart';
 import 'package:tour_place_app/constants.dart';
 import 'package:logging/logging.dart';
 
-class FavouriteButton extends StatefulWidget {
-  @override
-  _FavouriteButtonState createState() => _FavouriteButtonState();
-}
-
-class _FavouriteButtonState extends State<FavouriteButton> {
-  bool isFavorite = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(
-        isFavorite ? Icons.favorite : Icons.favorite_border,
-        color: Colors.red,
-      ),
-      onPressed: () {
-        setState(() {
-          isFavorite = !isFavorite;
-        });
-      },
-    );
-  }
-}
 
 class DetailsView extends StatelessWidget {
   final Place place;
@@ -43,7 +21,7 @@ class DetailsView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Stack(children: <Widget>[
-                  Image.asset('assets/images/waterfall.jpeg'),
+                  Image.asset(place.imageAsset),
                   SafeArea(
                       child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,9 +32,8 @@ class DetailsView extends StatelessWidget {
                             // Navigator.of(context).popUntil(ModalRoute.withName(HomeViewRoute));
                             Navigator.of(context).popUntil(ModalRoute.withName(CollectionViewRoute));
                             // Navigator.pop(context);
-                            // Navigator.pop(context);
                           }),
-                      FavouriteButton()
+                      FavouriteButton(place.isFavourite)
                     ],
                   ))
                 ]),

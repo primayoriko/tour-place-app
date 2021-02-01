@@ -8,7 +8,6 @@ class Search extends SearchDelegate<Place> {
   final List<Place> placeList;
 
   String selectedResult = "";
-  // List<Place> placeResult;
   List<Place> recentList = [];
 
   Search(this.placeList);
@@ -114,6 +113,7 @@ class Search extends SearchDelegate<Place> {
           leading: query.isEmpty ? Icon(Icons.access_time) : SizedBox(),
           onTap: () {
             selectedResult = suggestionList[index].name;
+            // buildResults(context);
             showResults(context);
           },
         );

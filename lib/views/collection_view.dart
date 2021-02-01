@@ -100,6 +100,8 @@ var tourismPlaceList = [
       'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
     ],
+    isFavourite: true,
+    rating: 4,
   ),
   Place(
     name: 'Monumen Nasional',
@@ -115,6 +117,8 @@ var tourismPlaceList = [
       'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
     ],
+    isFavourite: true,
+    rating: 5,
   ),
   Place(
     name: 'Curug Cikaso',
@@ -130,6 +134,8 @@ var tourismPlaceList = [
       'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
     ],
+    isFavourite: false,
+    rating: 3,
   ),
   Place(
     name: 'Museum Geologi',
@@ -145,5 +151,7 @@ var tourismPlaceList = [
       'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
     ],
+    isFavourite: true,
+    rating: 3,
   ),
 ];

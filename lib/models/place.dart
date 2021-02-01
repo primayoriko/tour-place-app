@@ -7,6 +7,8 @@ class Place{
   String ticketPrice;
   String imageAsset;
   List<String> imageUrls;
+  bool isFavourite;
+  int rating;
 
   Place({
     this.name,
@@ -17,5 +19,7 @@ class Place{
     this.ticketPrice,
     this.imageAsset,
     this.imageUrls,
+    this.isFavourite,
+    this.rating,
   });
 }
