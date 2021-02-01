@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:tour_place_app/components/search.dart';
 import 'package:tour_place_app/components/favourite_button.dart';
+import 'package:tour_place_app/components/footer.dart';
 
 import 'package:tour_place_app/views/details_view.dart';
 import 'package:tour_place_app/models/place.dart';
@@ -36,18 +37,7 @@ class _CollectionViewState extends State<CollectionView> {
           )
         ],
       ),
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(vertical: 10),
-        decoration: BoxDecoration(
-          // border: Border.symmetric(horizontal: BorderSide(width: 4, color: Color.fromRGBO(140, 50, 50, 0.5))),
-          color: Color.fromRGBO(95, 30, 30, 1),
-        ),
-        child: Text(
-          "Copyright @MyTrip.co ~2021~",
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
-        ),
-      ),
+      bottomNavigationBar: Footer(),
       body: ListView(
         children: placeList.asMap().entries.map((entry) {
           var idx = entry.key;

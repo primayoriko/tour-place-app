@@ -63,26 +63,30 @@ class HomeView extends StatelessWidget {
                               borderRadius: BorderRadius.circular(
                                   12.0)), //this right here
                           child: Container(
-                            height: 300.0,
-                            width: 300.0,
+                            height: 250.0,
+                            width: 230.0,
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Padding(
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.symmetric(horizontal: BorderSide(width: 4, color: Color.fromRGBO(140, 50, 50, 0.5))),
+                                    color: Color.fromRGBO(95, 20, 20, 1),
+                                  ),
                                   padding: EdgeInsets.all(15.0),
                                   child: Text(
                                     'Cool',
-                                    style: TextStyle(color: Colors.red),
+                                    style: TextStyle(color: Colors.white),
                                   ),
                                 ),
-                                Padding(
+                                Container(
                                   padding: EdgeInsets.all(15.0),
                                   child: Text(
                                     'Awesome',
                                     style: TextStyle(color: Colors.red),
                                   ),
                                 ),
-                                Padding(padding: EdgeInsets.only(top: 50.0)),
+                                Container(padding: EdgeInsets.only(top: 50.0)),
                                 FlatButton(
                                     onPressed: () {
                                       Navigator.of(context).pop();

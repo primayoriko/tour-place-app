@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:tour_place_app/models/place.dart';
 import 'package:tour_place_app/components/favourite_button.dart';
+import 'package:tour_place_app/components/footer.dart';
 import 'package:tour_place_app/constants.dart';
 import 'package:logging/logging.dart';
 
@@ -179,18 +180,7 @@ class DetailsView extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  decoration: BoxDecoration(
-                    // border: Border.symmetric(horizontal: BorderSide(width: 4, color: Color.fromRGBO(140, 50, 50, 0.5))),
-                    color: Color.fromRGBO(95, 30, 30, 1),
-                  ),
-                  child: Text(
-                    "Copyright @MyTrip.co ~2021~",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
-                  ),
-                ),
+                Footer(),
             ],
           )
         )

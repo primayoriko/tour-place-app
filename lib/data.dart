@@ -1,5 +1,7 @@
 import 'package:tour_place_app/models/place.dart';
 
+const creatorName = "PrimaYoriko";
+const year = 2021;
 var tourismPlaceList = [
   Place(
     name: 'Farm House Lembang',
