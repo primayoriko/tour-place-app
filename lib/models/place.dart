@@ -8,7 +8,7 @@ class Place{
   String imageAsset;
   List<String> imageUrls;
   bool isFavourite;
-  int rating;
+  double rating;
 
   Place({
     this.name,

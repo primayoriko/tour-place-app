@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 import 'package:tour_place_app/models/place.dart';
 import 'package:tour_place_app/components/search.dart';
 import 'package:tour_place_app/components/favourite_button.dart';
@@ -38,23 +40,29 @@ class DetailsView extends StatelessWidget {
                   ))
                 ]),
                 Container(
-                  child: Text(
-                    this.place.name,
-                    textAlign: TextAlign.center,
-                    // textAlign: TextAlignVertical.center,
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  decoration: BoxDecoration(
+                    border: Border.symmetric(horizontal: BorderSide(width: 4, color: Color.fromRGBO(140, 50, 50, 0.5))),
+                    color: Color.fromRGBO(95, 20, 20, 1),
                   ),
-                  margin: EdgeInsets.only(top: 20),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        this.place.name,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "~ at " + this.place.location + " ~",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(height: 2, fontSize: 18, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+                      ),
+                    ],
+                  )
                 ),
-                Container(
-                  child: Text(
-                    "~ at " + this.place.location + " ~",
-                    textAlign: TextAlign.center,
-                    // textAlign: TextAlignVertical.center,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
-                  ),
-                  margin: EdgeInsets.symmetric(vertical: 8),
-                ),
+                // Container(
+                //   child:
+                // ),
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 16),
                   child: Row(
@@ -85,11 +93,50 @@ class DetailsView extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    padding: EdgeInsets.all(16),
+                  margin: EdgeInsets.symmetric(vertical: 5),
+                  child: Center(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(bottom: 12),
+                          child: Text(
+                            "Your Rating",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        RatingBar.builder(
+                          initialRating: place.rating,
+                          minRating: 1,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          onRatingUpdate: (rating) {
+                            print(rating);
+                          },
+                        ),
+                      ],
+                    )
+                  )
+                ),
+                Container(
+                    margin: EdgeInsets.symmetric(vertical: 15, horizontal: 8),
+                    padding: EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      color: Color.fromRGBO(23, 23, 23, 0.80),
+                    ),
                     child: Text(
                         this.place.description,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 15))),
+                        style: TextStyle(fontSize: 15)
+                    )
+                ),
                 Container(
                   height: 150,
                   child: ListView(
