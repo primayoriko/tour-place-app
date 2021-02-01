@@ -41,7 +41,7 @@ class DetailsView extends StatelessWidget {
                               return false;
                             });
                           }),
-                      FavouriteButton(place.isFavourite)
+                      FavouriteButton(place)
                     ],
                   ))
                 ]),

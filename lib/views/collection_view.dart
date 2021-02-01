@@ -87,7 +87,7 @@ class _CollectionViewState extends State<CollectionView> {
                                   style: TextStyle(fontSize: 16.0),
                                 )
                               ),
-                              FavouriteButton(place.isFavourite)
+                              FavouriteButton(place)
                             ],
                           ),
                           SizedBox(

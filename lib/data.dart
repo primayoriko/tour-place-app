@@ -15,7 +15,7 @@ var tourismPlaceList = [
       'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
     ],
-    isFavourite: true,
+    isFavorite: true,
     rating: 4,
   ),
   Place(
@@ -32,7 +32,7 @@ var tourismPlaceList = [
       'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
     ],
-    isFavourite: true,
+    isFavorite: true,
     rating: 5,
   ),
   Place(
@@ -49,7 +49,7 @@ var tourismPlaceList = [
       'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
     ],
-    isFavourite: false,
+    isFavorite: false,
     rating: 3,
   ),
   Place(
@@ -66,7 +66,7 @@ var tourismPlaceList = [
       'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
       'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
     ],
-    isFavourite: true,
+    isFavorite: true,
     rating: 3,
   ),
 ];

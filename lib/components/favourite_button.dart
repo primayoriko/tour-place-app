@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
 
-class FavouriteButton extends StatefulWidget {
-  final bool isFavourite;
+import 'package:tour_place_app/models/place.dart';
 
-  FavouriteButton(this.isFavourite);
+class FavouriteButton extends StatefulWidget {
+  final Place place;
+
+  FavouriteButton(this.place);
 
   @override
-  _FavouriteButtonState createState() => _FavouriteButtonState(this.isFavourite);
+  _FavouriteButtonState createState() => _FavouriteButtonState(this.place);
 }
 
 class _FavouriteButtonState extends State<FavouriteButton> {
-  bool isFavorite;
+  Place place;
 
-  _FavouriteButtonState(this.isFavorite);
+  _FavouriteButtonState(this.place);
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(
-        isFavorite ? Icons.favorite : Icons.favorite_border,
+        place.isFavorite ? Icons.favorite : Icons.favorite_border,
         color: Colors.red,
       ),
       onPressed: () {
         setState(() {
-          isFavorite = !isFavorite;
+          place.isFavorite = !place.isFavorite;
         });
       },
     );
