@@ -3,6 +3,7 @@ import 'package:tour_place_app/components/search.dart';
 import 'package:tour_place_app/views/details_view.dart';
 import 'package:tour_place_app/models/place.dart';
 import 'package:tour_place_app/constants.dart';
+import 'package:tour_place_app/data.dart';
 
 class CollectionView extends StatefulWidget {
   final List<Place> placeList = tourismPlaceList;
@@ -27,6 +28,18 @@ class _CollectionViewState extends State<CollectionView> {
             },
           )
         ],
+      ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(
+          // border: Border.symmetric(horizontal: BorderSide(width: 4, color: Color.fromRGBO(140, 50, 50, 0.5))),
+          color: Color.fromRGBO(95, 30, 30, 1),
+        ),
+        child: Text(
+          "Copyright @MyTrip.co ~2021~",
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+        ),
       ),
       body: ListView(
         children: widget.placeList.map((place) {
@@ -83,75 +96,3 @@ class _CollectionViewState extends State<CollectionView> {
     );
   }
 }
-
-
-var tourismPlaceList = [
-  Place(
-    name: 'Farm House Lembang',
-    location: 'Lembang',
-    description:
-        'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
-    openDays: 'Open Everyday',
-    openTime: '09:00 - 20:00',
-    ticketPrice: 'Rp 25000',
-    imageAsset: 'assets/images/waterfall.jpeg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
-    ],
-    isFavourite: true,
-    rating: 4,
-  ),
-  Place(
-    name: 'Monumen Nasional',
-    location: 'Jakarta',
-    description:
-        'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
-    openDays: 'Open Everyday',
-    openTime: '09:00 - 20:00',
-    ticketPrice: 'Rp 25000',
-    imageAsset: 'assets/images/waterfall.jpeg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
-    ],
-    isFavourite: true,
-    rating: 5,
-  ),
-  Place(
-    name: 'Curug Cikaso',
-    location: 'Sukabumi',
-    description:
-        'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
-    openDays: 'Open Everyday',
-    openTime: '09:00 - 20:00',
-    ticketPrice: 'Rp 25000',
-    imageAsset: 'assets/images/waterfall.jpeg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
-    ],
-    isFavourite: false,
-    rating: 3,
-  ),
-  Place(
-    name: 'Museum Geologi',
-    location: 'Bandung',
-    description:
-        'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
-    openDays: 'Open Everyday',
-    openTime: '09:00 - 20:00',
-    ticketPrice: 'Rp 25000',
-    imageAsset: 'assets/images/waterfall.jpeg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'
-    ],
-    isFavourite: true,
-    rating: 3,
-  ),
-];
