@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:tour_place_app/models/place.dart';
-import 'package:tour_place_app/components/favourite_button.dart';
+import 'package:tour_place_app/components/favorite_button.dart';
 import 'package:tour_place_app/components/footer.dart';
 import 'package:tour_place_app/constants.dart';
 import 'package:logging/logging.dart';
@@ -42,7 +42,7 @@ class DetailsView extends StatelessWidget {
                               return false;
                             });
                           }),
-                      FavouriteButton(place)
+                      FavoriteButton(place)
                     ],
                   ))
                 ]),

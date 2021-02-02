@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:tour_place_app/components/favorite_button.dart';
 import 'package:tour_place_app/components/search.dart';
-import 'package:tour_place_app/components/favourite_button.dart';
 import 'package:tour_place_app/components/footer.dart';
 
 import 'package:tour_place_app/views/details_view.dart';
@@ -23,6 +23,15 @@ class _CollectionViewState extends State<CollectionView> {
 
   @override
   Widget build(BuildContext context) {
+    // Sorting list dynamically but still bugs
+    // placeList.sort((Place a, Place b) {
+    //   if(a.isFavorite){
+    //     return -1;
+    //   } else if(b.isFavorite){
+    //     return 1;
+    //   }
+    //   return 0;
+    // });
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(95, 20, 20, 1),
@@ -89,7 +98,7 @@ class _CollectionViewState extends State<CollectionView> {
                                   style: TextStyle(fontSize: 16.0),
                                 )
                               ),
-                              FavouriteButton(place)
+                              FavoriteButton(place, this)
                             ],
                           ),
                           SizedBox(

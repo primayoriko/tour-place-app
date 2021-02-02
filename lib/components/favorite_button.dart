@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 
 import 'package:tour_place_app/models/place.dart';
 
-class FavouriteButton extends StatefulWidget {
+class FavoriteButton extends StatefulWidget {
   final Place place;
+  final State statefulParent;
 
-  FavouriteButton(this.place);
+  FavoriteButton(this.place, [this.statefulParent]);
 
   @override
-  _FavouriteButtonState createState() => _FavouriteButtonState(this.place);
+  _FavoriteButtonState createState() => _FavoriteButtonState(this.place, this.statefulParent);
 }
 
-class _FavouriteButtonState extends State<FavouriteButton> {
+class _FavoriteButtonState extends State<FavoriteButton> {
+  final State statefulParent;
   Place place;
 
-  _FavouriteButtonState(this.place);
+  _FavoriteButtonState(this.place, this.statefulParent);
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,9 @@ class _FavouriteButtonState extends State<FavouriteButton> {
       onPressed: () {
         setState(() {
           place.isFavorite = !place.isFavorite;
+          if (statefulParent != null){
+            statefulParent.setState(() {});
+          }
         });
       },
     );
