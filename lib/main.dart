@@ -5,18 +5,17 @@ import 'package:tour_place_app/views/home_view.dart';
 import 'package:tour_place_app/views/details_view.dart';
 import 'package:tour_place_app/views/collection_view.dart';
 
-void main() => (runApp(MyApp()));
+void main() => (runApp(TourApp()));
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class TourApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Tour Place App',
       onGenerateRoute: generateRoute,
       initialRoute: HomeViewRoute,
-      // theme: ThemeData.light(),
       // home: HomeView(),
+      // theme: ThemeData.light(),
       theme: ThemeData(
         brightness: Brightness.dark,
         // accentColorBrightness: Bright,

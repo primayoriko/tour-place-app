@@ -38,7 +38,8 @@ class HomeView extends StatelessWidget {
                 // Navigator.pushNamed(context, CollectionViewRoute);
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    settings: RouteSettings(name: CollectionViewRoute, arguments: Map()),
+                    settings: RouteSettings(
+                        name: CollectionViewRoute, arguments: Map()),
                     builder: (context) => CollectionView(),
                   ),
                 );
@@ -63,39 +64,76 @@ class HomeView extends StatelessWidget {
                               borderRadius: BorderRadius.circular(
                                   12.0)), //this right here
                           child: Container(
-                            height: 250.0,
+                            height: 270.0,
                             width: 230.0,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.symmetric(horizontal: BorderSide(width: 4, color: Color.fromRGBO(140, 50, 50, 0.5))),
-                                    color: Color.fromRGBO(95, 20, 20, 1),
-                                  ),
-                                  padding: EdgeInsets.all(15.0),
-                                  child: Text(
-                                    'Cool',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ),
+                                    decoration: BoxDecoration(
+                                      border: Border.symmetric(
+                                          horizontal: BorderSide(
+                                              width: 4,
+                                              color: Color.fromRGBO(
+                                                  140, 50, 50, 0.5))),
+                                      color: Color.fromRGBO(95, 20, 20, 1),
+                                    ),
+                                    padding: EdgeInsets.all(15.0),
+                                    child: Center(
+                                      child: Text(
+                                        'Are you sure?',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    )),
                                 Container(
                                   padding: EdgeInsets.all(15.0),
                                   child: Text(
-                                    'Awesome',
-                                    style: TextStyle(color: Colors.red),
+                                    'This will close the app for you.\n\nTHIS IS STILL BUGGY, especially in development mode!',
+                                    style: TextStyle(color: Colors.white),
                                   ),
                                 ),
                                 Container(padding: EdgeInsets.only(top: 50.0)),
-                                FlatButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text(
-                                      'Got It!',
-                                      style: TextStyle(
-                                          color: Colors.purple, fontSize: 18.0),
-                                    ))
+                                Row(
+                                  children: [
+                                    Expanded(
+                                        child: Container(
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  Color.fromRGBO(
+                                                      24, 75, 167, 1.0),
+                                            ),
+                                            child: FlatButton(
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: Text(
+                                                  "Back",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 18.0),
+                                                )))),
+                                    Expanded(
+                                        child: Container(
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  Color.fromRGBO(
+                                                      201, 23, 23, 1.0),
+                                            ),
+                                            child: FlatButton(
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: Text(
+                                                  'Exit',
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 18.0),
+                                                )))),
+                                  ],
+                                )
                               ],
                             ),
                           ),
